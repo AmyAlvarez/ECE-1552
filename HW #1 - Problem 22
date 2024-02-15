@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath> // For trig functions
+
+int main() {
+    // Ask  user for an angle in radians
+    std::cout << "Enter an angle in radians: ";
+    double angle;
+    std::cin >> angle;
+
+    // Calculate the sine, cosine, and tangent of the angle
+    double sine = sin(angle);
+    double cosine = cos(angle);
+    double tangent = tan(angle);
+
+    // Round to four decimal places 
+    sine = round(sine * 10000.0) / 10000.0;
+    cosine = round(cosine * 10000.0) / 10000.0;
+    tangent = round(tangent * 10000.0) / 10000.0;
+
+    // Display the results with four decimal places
+    std::cout << "Sine: " << sine << std::endl;
+    std::cout << "Cosine: " << cosine << std::endl;
+    std::cout << "Tangent: " << tangent << std::endl;
+
+    return 0;
+}
