@@ -8,3 +8,17 @@ int main() {
     double diameter;
     std::cin >> diameter;
 
+    //Calculate the radius of the pizza
+    double radius = diameter / 2.0;
+
+    //Calculate the area of the pizza
+    double area = PI * radius * radius; // Area = πr^2
+
+    //Calculate the number of slices
+    double slices = area / 14.125;
+
+    //Display the number of slices
+    std::cout << "You can divide the pizza into " << static_cast<int>(slices) << " slices." << std::endl;
+
+    return 0;
+}
