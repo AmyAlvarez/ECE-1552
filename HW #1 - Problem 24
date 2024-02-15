@@ -1,0 +1,23 @@
+#include <iostream>
+
+int main() {
+    // Variables to store inputs
+    double R, E, S;
+
+    // Ask for user input
+    std::cout << "Enter the length of the row, in feet: ";
+    std::cin >> R;
+    std::cout << "Enter the amount of space used by an end-post assembly, in feet: ";
+    std::cin >> E;
+    std::cout << "Enter the amount of space between the vines, in feet: ";
+    std::cin >> S;
+
+    // Calculate the number of grapevines that will fit in the row
+    // The result is converted to int
+    int V = (R - 2 * E) / S;
+
+    // Display the result
+    std::cout << "The number of grapevines that will fit in the row is: " << V << std::endl;
+
+    return 0;
+}
