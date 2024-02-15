@@ -1,0 +1,28 @@
+#include <iostream>
+#include <iomanip> // setting precision
+
+int main() {
+    // Variables for prgm
+    const int SHARES = 1000;
+    const double PURCHASE_PRICE_PER_SHARE = 45.50;
+    const double SELLING_PRICE_PER_SHARE = 56.90;
+    const double BROKER_COMMISSION_RATE = 0.02; // 2%
+
+    // Calculations
+    double amountPaidForStock = SHARES * PURCHASE_PRICE_PER_SHARE;
+    double purchaseCommission = amountPaidForStock * BROKER_COMMISSION_RATE;
+    double amountReceivedFromSelling = SHARES * SELLING_PRICE_PER_SHARE;
+    double sellingCommission = amountReceivedFromSelling * BROKER_COMMISSION_RATE;
+    double profit = amountReceivedFromSelling - amountPaidForStock - purchaseCommission - sellingCommission;
+
+    // Results being displayed
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "Amount paid for the stock: $" << amountPaidForStock << std::endl;
+    std::cout << "Commission paid on the purchase: $" << purchaseCommission << std::endl;
+    std::cout << "Amount received from selling the stock: $" << amountReceivedFromSelling << std::endl;
+    std::cout << "Commission paid on the sale: $" << sellingCommission << std::endl;
+    std::cout << "Profit (or Loss if negative): $" << profit << std::endl;
+
+    return 0;
+}
+
