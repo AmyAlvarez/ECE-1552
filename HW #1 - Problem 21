@@ -1,0 +1,36 @@
+#include <iostream>
+
+int main() {
+    const double PI = 3.14159; // Define the value of pi
+
+    //Ask the user for the number of people
+    std::cout << "Enter the number of people attending the party: ";
+    int people;
+    std::cin >> people;
+
+    //Ask the user for the diameter of the pizzas
+    std::cout << "Enter the diameter of the pizzas to be ordered in inches: ";
+    double diameter;
+    std::cin >> diameter;
+
+    // Calculate the radius of the pizza
+    double radius = diameter / 2.0;
+
+    // Calculate the area of the pizza
+    double area = PI * radius * radius;
+
+    // Calculate the # of slices per pizza
+    double slicesPerPizza = area / 14.125;
+
+    //Calculate the total # of slices needed
+    int totalSlicesNeeded = people * 4; // 4 slices per person
+
+    //Calculate the # of pizzas to purchase
+    int pizzasToPurchase = (totalSlicesNeeded + static_cast<int>(slicesPerPizza) - 1) / static_cast<int>(slicesPerPizza);
+
+    //The # of pizzas to purchase
+    std::cout << "You should purchase " << pizzasToPurchase << " pizzas." << std::endl;
+
+    return 0;
+}
+
