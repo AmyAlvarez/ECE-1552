@@ -1,0 +1,10 @@
+#include <iostream>
+
+int main() {
+    const double PI = 3.14159; //Define the value of pi
+
+    //Ask the user for the diameter of the pizza
+    std::cout << "Enter the diameter of the pizza in inches: ";
+    double diameter;
+    std::cin >> diameter;
+
