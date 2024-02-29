@@ -1,0 +1,34 @@
+//Program by Amy Alvarez for ECE 1552 - HW #3
+#include <iostream>
+using namespace std;
+
+//Print a series of lines consisting of the '+' character
+//If start is less than end, the function prints a pattern where each subsequent line has more '+' characters than the previous one.
+void printPattern(int start, int end) {
+    if (start < end) {
+        for (int i = start; i <= end; ++i) {
+            for (int j = 1; j <= i; ++j) {
+                cout << "+";
+            }
+            cout << endl;
+        }
+    } else {
+        for (int i = start; i >= end; --i) {
+            for (int j = 1; j <= i; ++j) {
+                cout << "+";
+            }
+            cout << endl;
+        }
+    }
+}
+
+int main() {
+    cout << "Pattern A\n";
+    printPattern(1, 10);
+
+    cout << "Pattern B\n";
+    printPattern(10, 1);
+
+    return 0;
+}
+
