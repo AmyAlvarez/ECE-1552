@@ -1,0 +1,32 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double grade, curvePercentage, newGrade;
+    char letterGrade;
+
+    // Input is the original grade and curve percentage
+    cout << "Enter a student's grade (0-100): ";
+    cin >> grade;
+    cout << "Enter a curving percentage (0 - 20): ";
+    cin >> curvePercentage;
+
+    // Calculate new grade after curving
+    newGrade = grade + (grade * curvePercentage / 100);
+
+    // Determine letter grade
+    if (newGrade >= 90) letterGrade = 'A';
+    else if (newGrade >= 80) letterGrade = 'B';
+    else if (newGrade >= 70) letterGrade = 'C';
+    else if (newGrade >= 60) letterGrade = 'D';
+    else letterGrade = 'F';
+
+    // Output the results
+    cout << fixed << setprecision(2); // Set output decimal precision to 2
+    cout << "Curving the student's grade by " << curvePercentage << "%" << endl; //Curving the Students grade
+    cout << "The new grade is: " << newGrade << endl;
+    cout << "Final letter grade: " << letterGrade << endl;
+
+    return 0;
+}
