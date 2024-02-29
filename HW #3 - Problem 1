@@ -1,0 +1,47 @@
+//Program by Amy Alvarez for ECE 1552 - HW #3 
+
+#include <iostream>
+//If a positive # is not inputted it'll return an Error
+void printFibonacci(int n) {
+    if (n <= 0) {
+        std::cout << "Error: Please enter a positive integer." << std::endl;
+        return;
+    }
+
+//Declares 'long long' data type, used for storing large integers
+//t1 = 0 initalizes first term in seq. to 0
+//t2 = 1 initalizes second term in seq. to 1 
+//nextTerm = 0 initalizes second term in seq. to 1, used to calculate subseq.terms
+//by summing 't1' and 't2'
+    long long t1 = 0, t2 = 1, nextTerm = 0;
+
+    std::cout << "Fibonacci Series: ";
+
+    for (int i = 1; i <= n; ++i) {
+        if(i == 1) {
+            std::cout << t1 << ", ";
+            continue;
+        }
+        if(i == 2) {
+            std::cout << t2 << ", ";
+            continue;
+        }
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+        std::cout << nextTerm << ", ";
+    }
+    std::cout << "\b\b " << std::endl; // Removes the last comma and space
+}
+
+int main() {
+    int n;
+
+    std::cout << "Enter the number of terms of the Fibonacci sequence: ";
+    std::cin >> n;
+
+    printFibonacci(n);
+
+    return 0;
+}
+
